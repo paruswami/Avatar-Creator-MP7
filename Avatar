@@ -1,0 +1,431 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+
+import javax.swing.JComponent;
+
+public class Avatar extends JComponent{
+	
+int hairColor;
+int genderDecide;
+int skinColor;
+int eyeColor;
+int mouthColor;
+int feelingDecide;
+int noseShape;
+int earringDecide;
+int earringColor;
+String gender;
+Color hair;
+Color skin;
+Color mouth;
+Color earring;
+
+public static Color blondeHair = new Color(227,195, 72);
+public static Color brownHair = new Color(100, 58, 58);
+public static Color blackHair = Color.BLACK;
+
+public static Color boy = new Color(86,245, 255);
+public static Color girl = new Color(255,83, 240);
+
+public static Color white = new Color(255,206, 170);
+public static Color brown = new Color(158,100, 58);
+public static Color black = new Color(61,39, 22);
+
+public static Color greenEyes = new Color(82,219, 17);
+public static Color blueEyes = new Color(95,224, 240);
+public static Color brownEyes = new Color(120,76, 21);
+
+public static Color pinkMouth = new Color(255,110,182);
+public static Color redMouth = new Color(219,49,38);
+public static Color lightPinkMouth = new Color(255,156,205);
+
+public static Color happy = new Color(255,255, 25);
+public static Color sad = new Color(24,84, 191);
+public static Color surprised = new Color(133,13, 131);
+
+public static Color roundNose = new Color(189,216,255);
+public static Color pointyNose = new Color(227,51,232);
+public static Color vNose = new Color(158,64,95);
+
+
+public static Color yesEarrings = new Color(25,245, 23);
+public static Color noEarrings = new Color(255,30, 20);
+
+
+public static Color blueEarring = new Color(13,52,216);
+public static Color grayEarring = Color.DARK_GRAY;
+public static Color noEarring = Color.WHITE;
+
+
+	public void paintComponent(Graphics g){
+		Graphics2D g2D = (Graphics2D) g;
+		
+
+	g2D.setColor(new Color(34,178,216));	
+	g2D.fillRect(0, 0, 1500, 1500);
+	
+		if(genderDecide==1){
+			gender="boy";
+		}
+		
+		if(genderDecide==2){
+			gender="girl";
+		}
+		
+			if(hairColor == 1 && gender == "boy") { 
+				hair=blondeHair;
+			}
+			
+			if(hairColor == 1 && gender == "girl") { 
+				g2D.setColor(blondeHair);
+				g2D.fillArc(-20, 10, 1050, 1800, 0, 180);
+				hair=blondeHair;
+			}
+			
+			if(hairColor == 2 && gender == "boy") {
+				hair = brownHair;
+			}
+			
+			if(hairColor == 2 && gender == "girl") {
+				g2D.setColor(brownHair);
+				g2D.fillArc(-20, 10, 1050, 1800, 0, 180);
+				hair=brownHair;
+			}
+			
+			if(hairColor==3 && gender=="boy") {
+					hair=blackHair;
+			}	
+			
+			if(hairColor==3 && gender=="girl") {
+				g2D.setColor(blackHair);
+				g2D.fillArc(-20, 10, 1050, 1800, 0, 180);
+				hair=blackHair;
+			}
+			
+		if (skinColor == 1) {
+			g2D.setColor(white);
+			g2D.fillOval(100, 10, 800, 900);
+			skin = white;
+		}
+		
+		if (skinColor == 2) {
+			g2D.setColor(brown);
+			g2D.fillOval(100, 10, 800, 900);
+			skin = brown;
+		}
+		
+		if (skinColor == 3){
+			g2D.setColor(black);
+			g2D.fillOval(100, 10, 800, 900);
+			skin=black;
+		}
+		
+
+		if (eyeColor == 1) {
+			g2D.setColor(Color.WHITE);
+		    g2D.fillOval(200, 350, 250, 200);
+		    g2D.fillOval(550, 350, 250, 200);
+		     
+			g2D.setColor(greenEyes);
+		    g2D.fillOval(250, 360, 200, 170);
+		    g2D.fillOval(600, 360, 200, 170);
+		
+			g2D.setColor(Color.BLACK);
+			g2D.fillOval(300, 370, 150, 145);
+			g2D.fillOval(650, 370, 150, 145);
+		}
+		
+		if(eyeColor == 2) {
+			g2D.setColor(Color.WHITE);
+		    g2D.fillOval(200, 350, 250, 200);
+		    g2D.fillOval(550, 350, 250, 200);
+		     
+			g2D.setColor(blueEyes);
+			g2D.fillOval(250, 360, 200, 170);
+			g2D.fillOval(600, 360, 200, 170);
+		
+			g2D.setColor(Color.BLACK);
+			g2D.fillOval(300, 370, 150, 145);
+			g2D.fillOval(650, 370, 150, 145);
+		}
+		
+		if(eyeColor == 3) {
+			g2D.setColor(Color.WHITE);
+		    g2D.fillOval(200, 350, 250, 200);
+		    g2D.fillOval(550, 350, 250, 200);
+		     
+			g2D.setColor(brownEyes);
+			g2D.fillOval(250, 360, 200, 170);
+			g2D.fillOval(600, 360, 200, 170);
+		
+			g2D.setColor(Color.BLACK);
+			g2D.fillOval(300, 370, 150, 145);
+			g2D.fillOval(650, 370, 150, 145);
+		}
+		
+		if(mouthColor == 1){
+			mouth=pinkMouth;
+		}
+		
+		if(mouthColor == 2){
+			mouth=redMouth;
+		}
+		
+		if(mouthColor == 3){
+			mouth=lightPinkMouth;
+		}
+		
+
+		if(feelingDecide == 1) {
+			g2D.setColor(mouth);
+			g2D.fillArc(350, 550, 300, 250, 180, 180);
+		}
+		
+		if(feelingDecide == 2) {
+			g2D.setColor(mouth);
+			g2D.fillArc(350, 650, 300, 250, 0, 180);
+		}
+		
+		if(feelingDecide == 3) {
+			g2D.setColor(mouth);
+			g2D.fillOval(450,660, 130, 150);
+		}
+		
+		if(noseShape == 1) {
+			g2D.setColor(Color.BLACK);
+			Ellipse2D.Double nosey = new Ellipse2D.Double(460, 540, 90, 60);
+			 g2D.draw(nosey);
+		}
+		
+		if(noseShape == 2) {
+			Line2D.Double liney = new Line2D.Double(510, 520, 550, 610);
+			g2D.setColor(Color.BLACK);
+			g2D.draw(liney);
+
+			Line2D.Double liney2 = new Line2D.Double(510, 610, 550, 610);
+			g2D.setColor(Color.BLACK);
+			g2D.draw(liney2);
+		}
+		
+		if(noseShape == 3) {
+			g2D.setColor(Color.BLACK);
+			 Ellipse2D.Double nosey = new Ellipse2D.Double(475, 570, 25, 20);
+			 g2D.draw(nosey);
+			 Ellipse2D.Double nosey2 = new Ellipse2D.Double(505, 570, 25, 20);
+			 g2D.draw(nosey2);
+		}
+		
+		if(earringDecide == 1 && gender == "boy") {
+
+			g2D.setColor(hair);
+		    g2D.fillOval(190, 10, 600, 250);
+
+		    g2D.setColor(skin);
+			g2D.fillOval(80, 455, 50, 70);
+			g2D.fillOval(865, 455, 50, 70);
+
+			g2D.setColor(Color.BLACK);
+			g2D.drawOval(90, 510, 20, 20);
+		}
+		
+		if(earringDecide == 1 && gender == "girl") {
+
+			g2D.setColor(hair);
+			g2D.fillArc(120, 10, 800, 680, 155, -180);
+
+			g2D.setColor(hair);
+			g2D.fillArc(90, 50, 500, 700, 25, 180);
+
+			g2D.setColor(skin);
+			g2D.fillOval(100, 495, 50, 70);
+			g2D.fillOval(865, 455, 50, 70);
+
+			g2D.setColor(Color.BLACK);
+			g2D.drawOval(100, 540, 20, 20);
+			g2D.drawOval(890, 510, 20, 20);
+		}
+		
+		if(earringDecide == 2 && gender == "boy"){
+
+		    g2D.setColor(hair);
+		    g2D.fillOval(190, 10, 600, 250);
+
+		    g2D.setColor(skin);
+			g2D.fillOval(80, 455, 50, 70);
+			g2D.fillOval(865, 455, 50, 70);
+		}
+		
+		if(earringDecide == 2 && gender == "girl"){
+
+			g2D.setColor(hair);
+			g2D.fillArc(120, 10, 800, 680, 155, -180);
+
+			g2D.setColor(hair);
+			g2D.fillArc(90, 50, 500, 700, 25, 180);
+
+			g2D.setColor(skin);
+			g2D.fillOval(100, 495, 50, 70);
+			g2D.fillOval(865, 455, 50, 70);
+		}
+		
+		if(earringColor == 1 && gender == "boy") {
+			g2D.setColor(blueEarring);
+			 g2D.fillOval(90, 510, 20, 20);
+		}
+		
+		if(earringColor == 1 && gender == "girl") {
+			g2D.setColor(blueEarring);
+			g2D.fillOval(100, 540, 20, 20);
+			g2D.fillOval(890, 510, 20, 20);
+		}
+		
+		if(earringColor == 2 && gender == "boy") {
+			g2D.setColor(grayEarring);
+			 g2D.fillOval(90, 510, 20, 20);
+		}
+		
+		if(earringColor == 2 && gender == "girl") {
+			g2D.setColor(grayEarring);
+			g2D.fillOval(100, 540, 20, 20);
+			g2D.fillOval(890, 510, 20, 20);
+		}
+		
+		if(earringColor == 3) {
+			earring = skin;	
+		}
+	}	
+		
+	
+	public void gender(Color gender){
+		if(gender.equals(boy)){
+			genderDecide = 1;
+		}
+		if(gender.equals(girl)){
+			genderDecide = 2;
+		}
+		repaint();	
+	}
+	
+
+	public void hairColor(Color hair){
+		if (hair.equals(blondeHair)){
+			hairColor = 1;
+		}
+		
+		if (hair.equals(brownHair)){
+			hairColor = 2;
+		}
+		
+		if (hair.equals(blackHair)){
+			hairColor = 3;
+		}
+		
+		repaint();
+	}
+	
+	public void faceColor(Color face){
+		if (face.equals(white)){
+			skinColor = 1;
+		}
+		
+		if (face.equals(brown)){
+			skinColor = 2;
+		}
+		
+		if (face.equals(black)){
+			skinColor = 3;
+		}
+		
+		repaint();
+	}
+	
+	public void eyeColor(Color eyes){
+		if(eyes.equals(greenEyes)){
+			eyeColor = 1;
+		} 
+		
+		if(eyes.equals(blueEyes)){
+			eyeColor = 2;
+		}
+		
+		if(eyes.equals(brownEyes)){
+			eyeColor = 3;
+		}
+		
+		repaint();
+	}
+	
+	public void mouthColor(Color mouth){
+		if (mouth.equals(pinkMouth)){
+			mouthColor = 1;
+		}
+		
+		if(mouth.equals(redMouth)){
+			mouthColor = 2;
+		}
+		
+		if(mouth.equals(lightPinkMouth)){
+			mouthColor = 3;
+		}
+		repaint();
+	}
+	
+	public void feeling(Color feeling){
+		if (feeling.equals(happy)){
+			feelingDecide = 1;
+		}
+		if(feeling.equals(sad)){
+			feelingDecide = 2;
+		}
+		if(feeling.equals(surprised)){
+			feelingDecide = 3;
+		}
+		repaint();
+	}
+			
+	public void noseShape(Color nose){
+		if (nose.equals(roundNose)){
+			noseShape = 1;
+		}
+		
+		if(nose.equals(pointyNose)){
+			noseShape = 2;
+		}
+		
+		if(nose.equals(vNose)){
+			noseShape = 3;
+		}
+		repaint();
+	}
+	
+	public void havePiercing(Color piercing){
+		if (piercing.equals(yesEarrings)){
+			earringDecide = 1;
+		}
+		
+		if(piercing.equals(noEarrings)){
+			earringDecide = 2;
+		}
+
+		repaint();
+	}
+	
+	public void piercingColor(Color piercingColor){
+		if (piercingColor.equals(blueEarring)){
+			earringColor = 1;
+		}
+		
+		if(piercingColor.equals(grayEarring)){
+			earringColor = 2;
+		}
+		
+		if(piercingColor.equals(noEarring)){
+			earringColor = 3;
+		}
+		
+		repaint();
+	}
+}
