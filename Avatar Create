@@ -1,0 +1,419 @@
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class AvatarCreator extends Avatar {
+	
+	public static JPanel panel = new JPanel();
+	
+	public static Color blonde = new Color(227,195, 72);
+	public static Color darkBrown = new Color(100,58, 8);
+	public static Color blackHair = Color.BLACK;
+	
+	public static Color boy = new Color(86,245, 255);
+	public static Color girl = new Color(255,83, 240);
+	
+	public static Color white = new Color(255,206, 170);
+	public static Color brown = new Color(158,100, 58);
+	public static Color black = new Color(61,39, 22);
+	
+	public static Color greenEyes = new Color(82,219, 17);
+	public static Color blueEyes = new Color(95,224, 240);
+	public static Color brownEyes = new Color(120,76, 21);
+	
+	public static Color pinkMouth = new Color(255,110,182);
+	public static Color redMouth = new Color(219,49,38);
+	public static Color lightPinkMouth = new Color(255,156,205);
+	
+	public static Color happy = new Color(255,255, 25);
+	public static Color sad = new Color(24,84, 191);
+	public static Color surprised = new Color(133,13, 131);
+	
+	public static Color roundNose = new Color(189,216,255);
+	public static Color pointyNose = new Color(227,51,232);
+	public static Color vNose = new Color(158,64,95);
+	
+	public static Color yesEarrings = new Color(25, 245, 23);
+	public static Color noEarrings = new Color(255,30, 20);
+	
+	public static Color blueEarring = new Color(13,52,216);
+	public static Color grayEarring = Color.DARK_GRAY;
+	public static Color noEarring = Color.WHITE;
+
+	public static void main(String[] args)	{
+
+	JFrame frame = new JFrame();
+	frame.setSize(1000, 1000);
+	frame.setTitle("AVATAR GENERATOR (by Paru and Nandita)");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	panel.setLayout(new BorderLayout());
+	Avatar component = new Avatar();
+	panel.add(component, BorderLayout.CENTER);
+
+	Button button1 = new Button("Are you a boy or a girl?"); 
+	Button action1 = new Button("boy");
+	action1.setBackground(boy);
+	Button action2 = new Button("girl");
+	action2.setBackground(girl);	
+	
+	Button button2 = new Button("What is your hair color?"); 
+	Button action3 = new Button("blonde");
+	action3.setBackground(blonde);
+	Button action4 = new Button("brown");
+	action4.setBackground(brown);
+	Button action5 = new Button("black");
+	action5.setBackground(blackHair);
+	
+	Button button3 = new Button("What is your skin tone?"); 
+	Button action6 = new Button("light");
+	action6.setBackground(white);
+	Button action7 = new Button("medium");
+	action7.setBackground(brown);
+	Button action8 = new Button("dark");
+	action8.setBackground(black);
+	
+	Button button4 = new Button("What is your eye color?"); 
+	Button action9 = new Button("blue");
+	action9.setBackground(blueEyes);
+	Button action10 = new Button("green");
+	action10.setBackground(greenEyes);
+	Button action11 = new Button("brown");
+	action11.setBackground(brownEyes);
+
+	Button button5 = new Button("What is color is your mouth?"); 
+	Button action12 = new Button("pink");
+	action12.setBackground(pinkMouth);
+	Button action13 = new Button("red");
+	action13.setBackground(redMouth);
+	Button action14 = new Button("light pink");
+	action14.setBackground(lightPinkMouth);
+
+	Button button6 = new Button("How are you feeling today?"); 
+	Button action15 = new Button("happy");
+	action15.setBackground(happy);
+	Button action16 = new Button("sad");
+	action16.setBackground(sad);
+	Button action17 = new Button("surprised");
+	action17.setBackground(surprised);
+	
+	Button button7 = new Button("What shape is your nose?");
+	Button action18 = new Button("round");
+	action18.setBackground(roundNose);
+	Button action19 = new Button("pointy");
+	action19.setBackground(pointyNose);
+	Button action20 = new Button("voldemort");
+	action20.setBackground(vNose);
+	
+	Button button8 = new Button("Do you have an ear piercing?");
+	Button action21 = new Button("yes");
+	action21.setBackground(yesEarrings);
+	Button action22 = new Button("no");
+	action22.setBackground(noEarrings);
+	
+	Button button9 = new Button("What color piercing do you want?");
+	Button action23 = new Button("blue");
+	action23.setBackground(blueEarring);
+	Button action24 = new Button("gray");
+	action24.setBackground(grayEarring);
+	Button action25 = new Button("I do not have piercings");
+	action25.setBackground(noEarring);
+	
+	Button button10 = new Button("Thank you for playing!");
+	
+	
+	class ButtonListener0 implements ActionListener {
+		public void actionPerformed(ActionEvent a1) { 
+			if (a1.getSource()==action1) {
+				component.gender(boy);
+			}
+			
+			if (a1.getSource()==action2) {
+				component.gender(girl);
+			}
+			
+			panel.remove(button1); 
+			panel.remove(action1); 
+			panel.remove(action2);  
+			
+			panel.add(button2, BorderLayout.NORTH); 
+			panel.add(action3, BorderLayout.WEST); 
+			panel.add(action4, BorderLayout.SOUTH); 
+			panel.add(action5, BorderLayout.EAST); 
+			
+			button2.repaint();
+			panel.repaint();
+			frame.repaint();
+						
+		}
+	}
+	
+	action1.addActionListener(new ButtonListener0()); 
+	action2.addActionListener(new ButtonListener0());
+
+	class ButtonListener1 implements ActionListener {
+		public void actionPerformed(ActionEvent a2) { 
+			if (a2.getSource()==action3) {
+				component.hairColor(blondeHair);
+			}
+			
+			if (a2.getSource()==action4) {
+				component.hairColor(brownHair);
+			}
+			
+			if (a2.getSource()==action5) {
+				component.hairColor(blackHair);
+			}
+						
+			panel.remove(button2); 
+			panel.remove(action3); 
+			panel.remove(action4); 
+			panel.remove(action5); 
+			
+			panel.add(button3, BorderLayout.NORTH); 
+			panel.add(action6, BorderLayout.WEST); 
+			panel.add(action7, BorderLayout.SOUTH); 
+			panel.add(action8, BorderLayout.EAST); 
+			frame.repaint();
+			panel.repaint();
+			
+		}
+	}
+	
+	action3.addActionListener(new ButtonListener1()); 
+	action4.addActionListener(new ButtonListener1());
+	action5.addActionListener(new ButtonListener1());		 
+	
+	class ButtonListener2 implements ActionListener  {
+
+		public void actionPerformed(ActionEvent a3) { 
+			if (a3.getSource()==action6) {
+				component.faceColor(white);
+			}
+			
+			if (a3.getSource()==action7)	{
+				component.faceColor(brown);
+			}
+			
+			if (a3.getSource()==action8)	{
+				component.faceColor(black);
+			}
+			
+			panel.remove(button3); 
+			panel.remove(action6); 
+			panel.remove(action7); 
+			panel.remove(action8); 
+			
+			panel.add(button4, BorderLayout.NORTH); 
+			panel.add(action9, BorderLayout.WEST); 
+			panel.add(action10, BorderLayout.SOUTH); 
+			panel.add(action11, BorderLayout.EAST); 
+			frame.repaint();
+			panel.repaint();
+			
+		}
+	}
+	
+	action6.addActionListener(new ButtonListener2()); 
+	action7.addActionListener(new ButtonListener2());
+	action8.addActionListener(new ButtonListener2()); 
+	
+	 class ButtonListener3 implements ActionListener {
+		
+		 public void actionPerformed(ActionEvent a4)  { 		
+			if (a4.getSource()==action9) {
+				component.eyeColor(blueEyes);
+			}
+			
+			if (a4.getSource()==action10)	{
+				component.eyeColor(greenEyes);
+			}
+			
+			if (a4.getSource()==action11)	{
+				component.eyeColor(brownEyes);
+			}
+					
+			panel.remove(button4); 
+			panel.remove(action9); 
+			panel.remove(action10); 
+			panel.remove(action11); 
+					
+			panel.add(button5, BorderLayout.NORTH); 
+			panel.add(action12, BorderLayout.WEST); 
+			panel.add(action13, BorderLayout.SOUTH); 
+			panel.add(action14, BorderLayout.EAST); 
+			frame.repaint(); 
+			panel.repaint();
+					
+		}
+	}
+	 
+	action9.addActionListener(new ButtonListener3()); 
+	action10.addActionListener(new ButtonListener3());
+	action11.addActionListener(new ButtonListener3()); 
+		
+	class ButtonListener4 implements ActionListener {
+		public void actionPerformed(ActionEvent a5) { 		
+			if (a5.getSource()==action12)	{
+				component.mouthColor(pinkMouth);
+			}
+			
+			if (a5.getSource()==action13)	{
+				component.mouthColor(redMouth);
+			}
+			
+			if (a5.getSource()==action14) {
+				component.mouthColor(lightPinkMouth);
+			}
+								
+			panel.remove(button5); 
+			panel.remove(action12); 
+			panel.remove(action13); 
+			panel.remove(action14);
+			
+			panel.add(button6, BorderLayout.NORTH); 
+			panel.add(action15, BorderLayout.WEST); 
+			panel.add(action16, BorderLayout.SOUTH); 
+			panel.add(action17, BorderLayout.EAST); 
+			frame.repaint(); 
+			panel.repaint();				
+		}
+	}
+	
+	action12.addActionListener(new ButtonListener4()); 
+	action13.addActionListener(new ButtonListener4());
+	action14.addActionListener(new ButtonListener4()); 
+	
+		class ButtonListener5 implements ActionListener {
+			public void actionPerformed(ActionEvent a6) { 		
+				if (a6.getSource() == action15) {
+					component.feeling(happy);
+				}
+				
+				if (a6.getSource() == action16) {
+					component.feeling(sad);
+				}
+				
+				if (a6.getSource() == action17) {
+					component.feeling(surprised);
+				}
+							
+				panel.remove(button6); 
+				panel.remove(action15); 
+				panel.remove(action16); 
+				panel.remove(action17); 
+							
+				panel.add(button7, BorderLayout.NORTH); 
+				panel.add(action18, BorderLayout.WEST); 
+				panel.add(action19, BorderLayout.SOUTH); 
+				panel.add(action20, BorderLayout.EAST); 
+				frame.repaint(); 
+				panel.repaint();
+							
+				}
+				}
+					action15.addActionListener(new ButtonListener5()); 
+					action16.addActionListener(new ButtonListener5());
+					action17.addActionListener(new ButtonListener5()); 
+		
+		class ButtonListener6 implements ActionListener 
+		{
+			public void actionPerformed(ActionEvent a7) 
+			{ 		
+				if (a7.getSource() == action18) {
+					component.noseShape(roundNose);
+				}
+				
+				if (a7.getSource() == action19) {
+					component.noseShape(pointyNose);
+				}
+				
+				if (a7.getSource() == action20) {
+					component.noseShape(vNose);
+				}
+										
+				panel.remove(button7); 
+				panel.remove(action18); 
+				panel.remove(action19); 
+				panel.remove(action20); 
+										
+				panel.add(button8, BorderLayout.NORTH); 
+				panel.add(action21, BorderLayout.WEST); 
+				panel.add(action22, BorderLayout.EAST); 
+				frame.repaint(); 
+				panel.repaint();
+										
+			}
+		}
+					action18.addActionListener(new ButtonListener6()); 
+					action19.addActionListener(new ButtonListener6());
+					action20.addActionListener(new ButtonListener6()); 
+		
+		class ButtonListener7 implements ActionListener {
+			public void actionPerformed(ActionEvent a8) { 		
+				if (a8.getSource() == action21){
+					component.havePiercing(yesEarrings);
+				}
+				
+				if (a8.getSource() == action22){
+					component.havePiercing(noEarrings); 
+				}
+													
+				panel.remove(button8); 
+				panel.remove(action21); 
+				panel.remove(action22); 
+													
+				panel.add(button9, BorderLayout.NORTH); 
+				panel.add(action23, BorderLayout.WEST); 
+				panel.add(action24, BorderLayout.EAST); 
+				panel.add(action25, BorderLayout.SOUTH);
+				frame.repaint(); 
+				panel.repaint();
+													
+			}
+		}
+					action21.addActionListener(new ButtonListener7()); 
+					action22.addActionListener(new ButtonListener7());
+					
+		class ButtonListener8 implements ActionListener {
+			public void actionPerformed(ActionEvent a9) { 		
+				if (a9.getSource() == action23) {
+					component.piercingColor(blueEarring);
+				}
+				
+				if (a9.getSource() == action24) {
+					component.piercingColor(grayEarring);
+				}
+				
+				if (a9.getSource() == action25) {
+					component.piercingColor(noEarring);
+				}
+																
+				panel.remove(button9); 
+				panel.remove(action23); 
+				panel.remove(action24); 
+				panel.remove(action25); 
+																
+				panel.add(button10, BorderLayout.NORTH); 
+				frame.repaint(); 
+				panel.repaint();
+																
+			}
+		}
+					action23.addActionListener(new ButtonListener8()); 
+					action24.addActionListener(new ButtonListener8());
+					action25.addActionListener(new ButtonListener8()); 
+						
+	
+	panel.add(button1, BorderLayout.NORTH); 
+	panel.add(action1, BorderLayout.WEST); 
+	panel.add(action2, BorderLayout.EAST); 
+	frame.add(panel); 
+
+	
+	frame.setVisible(true);
+		}
+	}
